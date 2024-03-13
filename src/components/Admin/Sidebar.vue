@@ -184,7 +184,7 @@ export default {
   mounted() {
     const token = localStorage.getItem('token')
     axios
-      .get('http://company.ditenun.com/api/v1/admin/current', {
+      .get('http://localhost:8080/api/v1/admin/current', {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -77,7 +77,7 @@ export default {
     const token = localStorage.getItem('token')
     axios
       .get(
-        `http://company.ditenun.com/api/v1/generate/ulos/${this.Ulos.id}/motifs/${this.motifUlos.id}`,
+        `http://localhost:8080/api/v1/generate/ulos/${this.Ulos.id}/motifs/${this.motifUlos.id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

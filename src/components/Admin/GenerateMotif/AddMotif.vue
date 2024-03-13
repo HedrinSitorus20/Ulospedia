@@ -147,7 +147,7 @@ export default {
       const ulosID = this.$route.params.id
 
       const responseDataText = await axios.post(
-        `http://company.ditenun.com/api/v1/generate/ulos/${ulosID}/motifs`,
+        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs`,
         {
           size: this.size
         },
@@ -164,14 +164,14 @@ export default {
       const newMotifDataId = responseDataText.data.data.motif.id
       console.log(newMotifDataId)
       console.log(
-        `http://company.ditenun.com/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
+        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
       )
 
       const formData = new FormData()
       formData.append('motif-image', this.image)
 
       const secondResponse = await axios.post(
-        `http://company.ditenun.com/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`,
+        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`,
         formData,
         {
           headers: {
@@ -188,7 +188,7 @@ export default {
       this.$emit('data', {
         id: newMotifDataId,
         // size: responseDataText.data.data.motif,
-        imageUrl: `http://company.ditenun.com/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
+        imageUrl: `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
       })
     },
     handleFileChange(event) {

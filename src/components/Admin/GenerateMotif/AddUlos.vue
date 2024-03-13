@@ -171,7 +171,7 @@ export default {
       const token = localStorage.getItem('token')
 
       const responseDataText = await axios.post(
-        'http://company.ditenun.com/api/v1/generate/ulos',
+        'http://localhost:8080/api/v1/generate/ulos',
         {
           name: this.name,
           ethnic: this.ethnic
@@ -186,13 +186,13 @@ export default {
       console.log(responseDataText.data)
       const newUlosDataId = responseDataText.data.data.ulosData.id
       console.log(newUlosDataId)
-      console.log(`http://company.ditenun.com/api/v1/generate/ulos/${newUlosDataId}/image`)
+      console.log(`http://localhost:8080/api/v1/generate/ulos/${newUlosDataId}/image`)
 
       const formData = new FormData()
       formData.append('ulos-image', this.image)
 
       const secondResponse = await axios.post(
-        `http://company.ditenun.com/api/v1/generate/ulos/${newUlosDataId}/image`,
+        `http://localhost:8080/api/v1/generate/ulos/${newUlosDataId}/image`,
         formData,
         {
           headers: {
@@ -209,7 +209,7 @@ export default {
         id: newUlosDataId,
         name: responseDataText.data.data.ulosData.name,
         ethnic: responseDataText.data.data.ulosData.ethnic,
-        imageUrl: `http://company.ditenun.com/api/v1/generate/ulos/${newUlosDataId}/image`
+        imageUrl: `http://localhost:8080/api/v1/generate/ulos/${newUlosDataId}/image`
       })
       //console.log(responseDataImage)
     },

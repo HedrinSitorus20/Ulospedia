@@ -76,7 +76,7 @@ export default {
     async deleteItem() {
       const token = localStorage.getItem('token')
       const response = await axios.delete(
-        `http://company.ditenun.com/api/v1/ulospedia/weavers/${this.weaverId}`,
+        `http://localhost:8080/api/v1/ulospedia/weavers/${this.weaverId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

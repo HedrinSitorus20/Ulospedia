@@ -353,7 +353,7 @@ export default {
   },
   mounted() {
     axios
-      .get(`http://company.ditenun.com/api/v1/ulospedia/client/ulos?pageNo=${this.pageNo}`)
+      .get(`http://localhost:8080/api/v1/ulospedia/client/ulos?pageNo=${this.pageNo}`)
       .then((response) => {
         this.ulosData = response.data.data.ulosList.clientUlosResponseList
         // cek state apakah akan menjadi page terakhir atau tidak
@@ -486,7 +486,7 @@ export default {
       this.isDropdownVisible = !this.isDropdownVisible
     },
     setApiPath(pageNo, ethnic, type, colors, search) {
-      return `http://company.ditenun.com/api/v1/ulospedia/client/ulos?pageNo=${pageNo}${
+      return `http://localhost:8080/api/v1/ulospedia/client/ulos?pageNo=${pageNo}${
         ethnic !== '' ? '&ethnic=' + ethnic : ''
       }
       ${type !== '' ? '&type=' + type : ''}

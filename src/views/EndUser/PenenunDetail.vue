@@ -73,7 +73,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://company.ditenun.com/api/v1/ulospedia/client/weavers/' + this.$route.params.id)
+      .get('http://localhost:8080/api/v1/ulospedia/client/weavers/' + this.$route.params.id)
       .then((response) => {
         this.penenunDetails = response.data.data
         console.log(this.penenunDetails)

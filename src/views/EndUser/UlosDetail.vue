@@ -72,7 +72,7 @@
                             <p class="font-normal text-lg text-neutral_100">Tersedia di e-commerce DiTenun</p>
 
                             <div class="flex flex-row gap-4">
-                                <img src="../assets/images/tote-bag.png" alt="" class="rounded-md">
+                                <img src="../../assets/images/tote-bag.png" alt="" class="rounded-md">
                                 <div class="flex flex-col gap-6 pt-12">
                                     <div class="gap-4">
                                         <p class="font-medium text-lg">Totebag Harungguan</p>
@@ -105,7 +105,7 @@ export default {
   },
   mounted() {
     axios
-    .get('http://company.ditenun.com/api/v1/ulospedia/client/ulos/' + this.$route.params.id)
+    .get('http://localhost:8080/api/v1/ulospedia/client/ulos/' + this.$route.params.id)
       .then((response) => {
         this.ulosDetails = response.data.data
         console.log(this.ulosDetails)
