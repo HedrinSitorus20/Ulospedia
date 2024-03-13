@@ -147,7 +147,7 @@ export default {
   mounted() {
     const token = localStorage.getItem('token')
     axios
-      .get('http://localhost:8080/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=1')
+      .get('http://localhost:8081/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=1')
       .then((response) => {
         this.penenuns = response.data.data.weaverList.clientWeaverResponseList
         console.log(this.penenuns)
@@ -156,7 +156,7 @@ export default {
         console.log(error)
       })
 
-      axios.get('http://localhost:8080/api/v1/ulospedia/weavers/count', {
+      axios.get('http://localhost:8081/api/v1/ulospedia/weavers/count', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -166,7 +166,7 @@ export default {
         console.log(this.totalWeaver)
       })
 
-      axios.get('http://localhost:8080/api/v1/ulospedia/ulos/count', {
+      axios.get('http://localhost:8081/api/v1/ulospedia/ulos/count', {
         headers: {
           Authorization: `Bearer ${token}`
         }

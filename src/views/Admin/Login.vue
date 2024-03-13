@@ -151,7 +151,7 @@ export default {
 
       try {
         // const response = await axios.post('http://company.ditenun.com/api/v1/auth/login', {
-        const response = await axios.post('http://localhost:8080/api/v1/auth/login', {
+        const response = await axios.post('http://localhost:8081/api/v1/auth/login', {
           // Request body data
           username: this.username,
           password: this.password

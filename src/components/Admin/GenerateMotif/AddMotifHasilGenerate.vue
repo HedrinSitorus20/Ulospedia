@@ -13,7 +13,7 @@
           d="M10 18.333c4.583 0 8.333-3.75 8.333-8.333S14.583 1.667 10 1.667 1.667 5.417 1.667 10s3.75 8.333 8.333 8.333ZM6.667 10h6.666M10 13.333V6.667"
         />
       </svg>
-      Tambah Gambar Motif Ulos
+      Tambah Gambar Hasil Generate Motif
     </button>
 
     <!-- Modal -->
