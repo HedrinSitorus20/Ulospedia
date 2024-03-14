@@ -205,4 +205,5 @@ a.router-link-exact-active {
 a.router-link-exact-active svg path {
   stroke: #3355b5;
 }
+
 </style>
