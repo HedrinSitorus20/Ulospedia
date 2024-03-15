@@ -324,7 +324,7 @@ export default {
       const token = localStorage.getItem('token')
 
       const responseDataText = await axios.put(
-        `http://localhost:8081/api/v1/ulospedia/weavers/${this.weaver.id}`,
+        `http://localhost:8080/api/v1/ulospedia/weavers/${this.weaver.id}`,
         {
           name: this.weaverData.name,
           yearOfBirth: this.weaverData.birthYear,
@@ -344,13 +344,13 @@ export default {
       console.log(responseDataText.data)
       const newWeaverId = responseDataText.data.data.weaver.id
       console.log(newWeaverId)
-      console.log(`http://localhost:8081/api/v1/ulospedia/weavers/${newWeaverId}/image`)
+      console.log(`http://localhost:8080/api/v1/ulospedia/weavers/${newWeaverId}/image`)
 
       const formData = new FormData()
       formData.append('weaver-image', this.image)
 
       const responseDataImage = await axios.put(
-        `http://localhost:8081/api/v1/ulospedia/weavers/${newWeaverId}/image`,
+        `http://localhost:8080/api/v1/ulospedia/weavers/${newWeaverId}/image`,
         formData,
         {
           headers: {

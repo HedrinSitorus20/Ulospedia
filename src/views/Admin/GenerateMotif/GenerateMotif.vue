@@ -165,7 +165,7 @@ export default {
     console.log(token)
 
     axios
-      .get('http://localhost:8081/api/v1/generate/ulos', {
+      .get('http://localhost:8080/api/v1/generate/ulos', {
         headers: {
           Authorization: `Bearer ${token}`
         }

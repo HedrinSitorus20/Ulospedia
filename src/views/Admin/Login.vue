@@ -143,7 +143,7 @@ export default {
       try {
         // const response = await axios.post('http://company.ditenun.com/api/v1/auth/login', {
         const response = await axios.post('http://localhost:8081/api/v1/auth/login', {
-          // Request Data Body
+          // Request body data
           username: this.username,
           password: this.password,
           rememberMe: this.rememberMe // Kirim data "Ingat saya" ke server

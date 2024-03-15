@@ -158,7 +158,7 @@ export default {
     const ulosID = this.$route.params.id
 
     axios
-      .get(`http://localhost:8081/api/v1/generate/ulos/${ulosID}/motifs`, {
+      .get(`http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
