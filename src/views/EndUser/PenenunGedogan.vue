@@ -73,7 +73,7 @@ export default {
   mounted() {
     axios
       .get(
-        `http://localhost:8080/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=${this.pageNo}`
+        `http://localhost:8081/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=${this.pageNo}`
       )
       .then((response) => {
         console.log(response.data)
@@ -92,7 +92,7 @@ export default {
   methods: {
     async loadMore() {
       const morePenenuns = await axios.get(
-        `http://localhost:8080/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=${this.pageNo}`
+        `http://localhost:8081/api/v1/ulospedia/client/weavers?theLoom=Gedogan&pageNo=${this.pageNo}`
       )
       console.log(morePenenuns.data)
       this.penenuns = this.penenuns.concat(

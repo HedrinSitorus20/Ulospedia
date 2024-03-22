@@ -133,7 +133,7 @@
         >
           <div id="hs-mega-menu-basic-dr" type="button" class="flex items-center w-full">
             <div class="mr-16">
-              <div><span>{{ username }}</span></div>
+              <div v-if="username"><span>{{ username }}</span></div>
               <div class="font font-light text-sm pt-0"><span>admin</span></div>
             </div>
           </div>
@@ -183,8 +183,9 @@ export default {
   },
   mounted() {
     const token = localStorage.getItem('token')
+    console.log("TOKEN admin : ", token)
     axios
-      .get('http://localhost:8080/api/v1/admin/current', {
+      .get('http://localhost:8081/api/v1/admin/current', {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -116,7 +116,7 @@ export default {
   mounted() {
     const token = localStorage.getItem('token')
     axios
-      .get('http://localhost:8080/api/v1/ulospedia/weavers/' + this.$route.params.id, {
+      .get('http://localhost:8081/api/v1/ulospedia/weavers/' + this.$route.params.id, {
         headers: {
           Authorization: `Bearer ${token}`
         }

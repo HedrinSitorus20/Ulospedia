@@ -80,7 +80,7 @@
       async deleteItem() {
         const token = localStorage.getItem('token')
         const response = await axios.delete(
-          `http://localhost:8080/api/v1/ulospedia/weavers/${this.weaverId}`,
+          `http://localhost:8081/api/v1/ulospedia/weavers/${this.weaverId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`

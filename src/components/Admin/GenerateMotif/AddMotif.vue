@@ -23,7 +23,7 @@
 
       <div class="rounded-lg p-8 shadow-lg md:w-1/3 sm:w-full bg-neutral_10 z-50">
         <div class="flex flex-col gap-4 w-full mr-4">
-          <h5 class="font-bold text-left text-xl">Tambah Gambar Motif Ulos</h5>
+          <h5 class="font-bold text-left text-xl">Tambah Gambar Motif Ulos 01</h5>
           <div class="flex flex-col gap-6 md:flex-row pb-6">
             <label for="ulos-name" class="block mb-2 text-sm font-medium text-neutral_80 md:w-1/3"
               >Gambar Motif Ulos*</label
@@ -147,7 +147,7 @@ export default {
       const ulosID = this.$route.params.id
 
       const responseDataText = await axios.post(
-        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs`,
+        `http://localhost:8081/api/v1/generate/ulos/${ulosID}/motifs`,
         {
           size: this.size
         },
@@ -164,14 +164,14 @@ export default {
       const newMotifDataId = responseDataText.data.data.motif.id
       console.log(newMotifDataId)
       console.log(
-        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
+        `http://localhost:8081/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
       )
 
       const formData = new FormData()
       formData.append('motif-image', this.image)
 
       const secondResponse = await axios.post(
-        `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`,
+        `http://localhost:8081/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`,
         formData,
         {
           headers: {
@@ -188,7 +188,7 @@ export default {
       this.$emit('data', {
         id: newMotifDataId,
         // size: responseDataText.data.data.motif,
-        imageUrl: `http://localhost:8080/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
+        imageUrl: `http://localhost:8081/api/v1/generate/ulos/${ulosID}/motifs/${newMotifDataId}/image`
       })
     },
     handleFileChange(event) {

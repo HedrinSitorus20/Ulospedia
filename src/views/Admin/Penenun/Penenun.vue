@@ -245,7 +245,7 @@ export default {
     const token = localStorage.getItem('token')
     console.log(token)
     axios
-      .get('http://localhost:8080/api/v1/ulospedia/weavers?sortDir=desc', {
+      .get('http://localhost:8081/api/v1/ulospedia/weavers?sortDir=desc', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -278,7 +278,7 @@ export default {
       this.weavers = this.weavers.filter((weaver) => weaver.id !== weaverId)
     },
     defineParam(pageNo, sortBy, sortDir, search) {
-      return `http://localhost:8080/api/v1/ulospedia/weavers?pageNo=${pageNo}${
+      return `http://localhost:8081/api/v1/ulospedia/weavers?pageNo=${pageNo}${
         sortBy !== '' ? '&sortBy=' + sortBy : ''
       }${sortDir !== '' ? '&sortDir=' + sortDir : ''}${
         search !== '' ? '&searchByName=' + search : ''
@@ -388,7 +388,7 @@ export default {
     async fetchWeavers() {
       try {
         const token = localStorage.getItem('token')
-        const response = await axios.get('http://localhost:8080/api/v1/ulospedia/weavers', {
+        const response = await axios.get('http://localhost:8081/api/v1/ulospedia/weavers', {
           params: {
             pageNo: 1,
             pageSize: 10,

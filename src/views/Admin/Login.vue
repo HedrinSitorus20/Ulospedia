@@ -104,7 +104,6 @@
 
             <div :class="{'mt-large': submitted && (!username || !password), 'mt-standard': !(submitted && (!username || !password))}">
               <button
-                @click="loginUser"
                 type="submit"
                 class="flex w-full justify-center rounded-lg bg-primary_main px-4 py-2 text-lg font-medium leading-6 text-neutral_10 hover:bg-primary_hover"
               >
@@ -133,6 +132,10 @@ export default {
     }
   },
   methods: {
+    login: function(){
+      this.$v.$touch();
+      if(this.$v.$pending || this.$v.$error) return;
+    },
     async loginUser() {
       this.submitted = true; // Mark the form as submitted
 
