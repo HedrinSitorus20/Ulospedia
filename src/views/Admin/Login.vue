@@ -1,13 +1,15 @@
 <template>
   <div class="grid grid-cols-2">
     <div class="col-span-1">
-      <img src="../../assets/images/admin/login-illustration.png" alt="" class="h-screen w-full" />
+      <img src="@/assets/images/admin/login-illustration.png" alt="" class="h-screen w-full" />
+      <!-- <img :src="require('@/assets/images/admin/login-illustration.png')" alt="" class="h-screen w-full" /> -->
     </div>
 
     <div class="form col-span-1">
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img class="mx-auto w-20 h-14" src="../../assets/ditenun-logo.png" alt="DiTenun" />
+          <img class="mx-auto w-20 h-14" src="@/assets/ditenun-logo.png" alt="DiTenun" />
+          <!-- <img class="mx-auto w-20 h-14" :src="require('@/assets/ditenun-logo.png')" alt="DiTenun" /> -->
           <h3 class="mt-6 text-center font-medium text-[26px]">Selamat Datang Kembali</h3>
           <p class="mt-2 text-center font-normal text-xl text-neutral_80">
             Masukkan kredensial yang valid untuk login
@@ -89,7 +91,8 @@
                 <span v-if="submitted && !password" class="absolute mt-1 text-red-500 mb-2">Masukkan password anda</span>
               </div>
             </div>
-              <!-- Checkbox untuk fitur "Ingat saya" -->
+
+            <!-- Checkbox untuk fitur "Ingat saya" -->
             <div class="flex items-center mb-4">
               <input
                 v-model="rememberMe"
